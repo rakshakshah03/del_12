@@ -124,20 +124,25 @@ nav li:hover{
 }
 
 .container {
+  display: grid;
   grid-template-columns: 1fr 5fr 1fr;
   gap: 15px;
-  display: grid;
 }
-.container:nth-child(1){
+.container > :first-child{
+  display:grid;
   grid-column-start: 1;
   grid-column-end: -1;
   min-height: 500px;
-  background-image: url("images/header.jpg");
+  background-image: url("../images/header.jpg");
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .about, .method, .clients, .contact{
-  grid-column: 1/span 1;
+  grid-column-start: 2;
+  grid-column-end: span 1;
 }
 
 .about{
@@ -193,21 +198,19 @@ nav li:hover{
   nav{
     text-align:right;
     padding: 30px 0px;
+
   }
   .container{
     grid-template-columns: 50px auto 500px auto 50px;
-    display: grid;
   }
   .about,.clients,#method-image,#contact-image{
     grid-column-start: 3;
     grid-column-end: span 2;
-    display:grid;
   }
 
   .method,.contact,#about-image,#clients-image{
     grid-column-start: 2;
     grid-column-end: span 2;
-    display:grid;
   }
 }
 /* PLEASE DO NOT REMOVE MY COMMENTS.  THEY HELP US HELP YOU DEBUG. */
