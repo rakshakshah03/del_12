@@ -159,7 +159,7 @@ nav a:focus, nav a:hover{
   grid-row-start: 5;
 }
 
-#about-image, #method-image, #clients-image, #contact-image{
+.about-image, .method-image, .clients-image, .contact-image{
   grid-column-start: 1;
   grid-column-end: -1;
   max-height: 600px;
