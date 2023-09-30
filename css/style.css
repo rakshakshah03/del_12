@@ -60,8 +60,6 @@ nav a{
   -webkit-transition: top 1s ease-out;
   transition: top 1s ease-out;
   z-index: 1;
-  position: absolute;
-  top: -40px;
 }
 
 
@@ -109,29 +107,30 @@ footer{
 
 
 /*Your Code Here*/
+.skip a {
+  position: absolute;
+  top: -40px;
+}
+
 .skip a:focus{
-  left: 0;
   top:20px;
 }
 
-nav li:focus{
+nav a:focus, nav a:hover{
   text-decoration: underline;
-  border: 2px solid;
 }
 
-nav li:hover{
-  text-decoration: underline;
+*:focus{
+  border: solid 2px;
 }
 
 .container {
   display: grid;
   grid-template-columns: 1fr 5fr 1fr;
-  gap: 15px;
+  grid-gap: 15px;
 }
-.container > :first-child{
-  display:grid;
-  grid-column-start: 1;
-  grid-column-end: -1;
+.container div:first-child{
+  grid-column: 1/-1;
   min-height: 500px;
   background-image: url("../images/header.jpg");
   background-attachment: fixed;
@@ -141,8 +140,7 @@ nav li:hover{
 }
 
 .about, .method, .clients, .contact{
-  grid-column-start: 2;
-  grid-column-end: span 1;
+  grid-column:2/3;
 }
 
 .about{
@@ -168,28 +166,24 @@ nav li:hover{
   overflow: hidden;
 }
 
-#about-image{
+.about-image{
   grid-row-start: 2;
 }
 
-#method-image{
+.method-image{
   grid-row-start: 3;
 }
 
-#clients-image{
+.clients-image{
   grid-row-start: 4;
 }
 
-#contact-image{
+.contact-image{
   grid-row-start: 5;
 }
 
 .text-block{
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  margin: auto;
   max-height: 250px;
   overflow: auto;
 }
@@ -203,12 +197,12 @@ nav li:hover{
   .container{
     grid-template-columns: 50px auto 500px auto 50px;
   }
-  .about,.clients,#method-image,#contact-image{
+  .about,.clients,.method-image,.contact-image{
     grid-column-start: 3;
     grid-column-end: span 2;
   }
 
-  .method,.contact,#about-image,#clients-image{
+  .method,.contact,.about-image,.clients-image{
     grid-column-start: 2;
     grid-column-end: span 2;
   }
